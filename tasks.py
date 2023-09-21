@@ -1,5 +1,6 @@
 import time
-from celery import Celery
+from celery import Celery, shared_task
+
 
 app = Celery("tasks", backend="rpc://", broker="pyamqp://guest@localhost//")
 
@@ -7,6 +8,11 @@ app = Celery("tasks", backend="rpc://", broker="pyamqp://guest@localhost//")
 @app.task
 def add(x, y):
     return x + y
+
+
+@shared_task
+def mul(x, y):
+    return x * y
 
 
 @app.task
