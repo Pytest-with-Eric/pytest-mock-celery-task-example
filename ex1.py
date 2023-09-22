@@ -1,6 +1,5 @@
-from tasks import add, return_hello
+from tasks import reverse_string
 
-result = add.delay(4, 4)
+# result = areverse_stringdd.delay("hello")
 
-# result = return_hello.delay()
-print(result.ready())
+# print(result.ready())
