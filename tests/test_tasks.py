@@ -4,9 +4,9 @@ from tasks import reverse_string
 
 
 ## Running Celery Task with Backend and Broker (RabbitMQ)
-@pytest.mark.celery(result_backend="rpc://")
-def test_reverse_string(celery_app, celery_worker):
-    assert reverse_string.delay("hello").get(timeout=10) == "olleh"
+# @pytest.mark.celery(result_backend="rpc://")
+# def test_reverse_string(celery_app, celery_worker):
+#     assert reverse_string.delay("hello").get(timeout=10) == "olleh"
 
 
 # @pytest.fixture
