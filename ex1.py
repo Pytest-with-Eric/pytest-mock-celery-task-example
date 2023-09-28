@@ -1,5 +1,3 @@
-from tasks import reverse_string
+from tasks import reverse_string, add
 
-# result = areverse_stringdd.delay("hello")
-
-# print(result.ready())
+print(add.delay(5, 9).get())

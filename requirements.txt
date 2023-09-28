@@ -4,3 +4,4 @@ black==23.9.0
 Celery==5.3.4
 pytest-celery
 pytest-mock==3.11.1
+asgiref==3.7.2
