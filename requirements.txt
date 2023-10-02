@@ -5,3 +5,4 @@ Celery==5.3.4
 pytest-celery
 pytest-mock==3.11.1
 asgiref==3.7.2
+pytest-asyncio==0.21.0

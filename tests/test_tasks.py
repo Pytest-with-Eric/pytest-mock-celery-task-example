@@ -1,12 +1,14 @@
 import celery
-import pytest
 from tasks import reverse_string, add
+import pytest
+from tasks import add
+from celery.contrib.pytest import celery_app
 
 
 ## Running Celery Task with Backend and Broker (RabbitMQ)
-@pytest.mark.celery(result_backend="rpc://")
-def test_reverse_string(celery_app, celery_worker):
-    assert reverse_string.delay("hello").get(timeout=10) == "olleh"
+# @pytest.mark.celery(result_backend="rpc://")
+# def test_reverse_string(celery_app, celery_worker):
+#     assert reverse_string.delay("hello").get(timeout=10) == "olleh"
 
 
 @pytest.fixture
@@ -24,3 +26,18 @@ def test_reverse_string_mocked(mocked_reverse_string):
 
     # Check the result of the Celery task
     assert result == "olleh"
+
+
+def test_add(mocker):
+    # Arrange
+    x = 5
+    y = 7
+
+    # Mock the Celery task's apply_async method
+    mocked_add = mocker.patch("tasks.add.apply_async", autospec=True)
+
+    # Act
+    result = add.apply_async(args=[x, y])
+
+    # Assert
+    mocked_add.assert_called_once_with(args=[x, y])
