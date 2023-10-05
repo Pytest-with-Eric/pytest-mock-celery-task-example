@@ -28,7 +28,7 @@ def test_reverse_string_mocked(mocked_reverse_string):
     assert result == "olleh"
 
 
-def test_add(mocker):
+def test_add_async_mocked(mocker):
     # Arrange
     x = 5
     y = 7
