@@ -1,7 +1,7 @@
 # Pytest Mock Celery Task Example
-<!-- This repo contains the sample code for the article - [How To Use Pytest Logging And Print To Console And File (A Comprehensive Guide)](https://pytest-with-eric.com/pytest-best-practices/pytest-logging/)
+This repo contains the sample code for the article - [How To Mock Celery Tasks With Pytest (Step-by-Step Guide with Examples)](https://pytest-with-eric.com/pytest-advanced/mock-celery-task-pytest/)
 
-This project explains how to use Pytest logging and print to console and file.  -->
+This project explains how to mock Celery tasks in Pytest. 
 
 # Requirements
 * Python (≥ 3.11)
